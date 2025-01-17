@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-// Rutas Administrador
+// Rutas Usuarios para el Admin 
 Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users.index');
+Route::get('/admin/create', [UserController::class, 'create'])->name('admin.users.create');
+
 
