@@ -38,15 +38,13 @@
             <header class="bg-[#FFFFFF] shadow-md">
                 <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                     <h1 class="text-2xl font-semibold text-[#1565C0]">@yield('header', 'Panel de Control')</h1>
-                    <div class="flex items-center">
-                        <button class="relative p-2 text-[#1565C0] hover:text-[#B3E5FC] focus:outline-none focus:ring-2 focus:ring-[#1565C0]">
-                            <span class="sr-only">Ver notificaciones</span>
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                            </svg>
-                            <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-400 ring-2 ring-white"></span>
+                    <ul class="flex ml-auto items-center space-x-4">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="text-sm text-gray-700 hover:text-gray-500">
+                            {{ __('Cerrar Sesión') }}
                         </button>
-                    </div>
+                    </form>
                 </div>
             </header>
 
