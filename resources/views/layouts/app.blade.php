@@ -17,18 +17,20 @@
                 <span class="text-2xl font-extrabold">Notificaciones</span>
             </a>
             <nav>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
+                <a href="{{ route('dashboard') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
                     Dashboard
                 </a>
                 <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
                     Proyectos
                 </a>
                 <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
-                    Usuarios
+                    Mi perfil
                 </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
-                    Configuración
-                </a>
+                @if (Auth::user()->email == 'raortega8906@gmail.com')
+                    <a href="{{ route('admin.users.index') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
+                        Usuarios
+                    </a>
+                @endif
             </nav>
         </div>
 
@@ -41,7 +43,7 @@
                     <ul class="flex ml-auto items-center space-x-4">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="text-sm text-gray-700 hover:text-gray-500">
+                        <button type="submit" class="text-1xl font-semibold text-[#1565C0]">
                             {{ __('Cerrar Sesión') }}
                         </button>
                     </form>

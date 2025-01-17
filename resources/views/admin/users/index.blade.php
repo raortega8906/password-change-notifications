@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Users')
-@section('header', 'Users Management')
+@section('title', 'Usuarios')
+@section('header', 'Usuarios')
 
 @section('content')
 <div class="bg-white p-6 rounded-lg shadow">
@@ -9,9 +9,9 @@
         <thead>
             <tr class="bg-gray-200">
                 <th class="border border-gray-300 px-4 py-2">ID</th>
-                <th class="border border-gray-300 px-4 py-2">Name</th>
+                <th class="border border-gray-300 px-4 py-2">Nombre</th>
                 <th class="border border-gray-300 px-4 py-2">Email</th>
-                <th class="border border-gray-300 px-4 py-2">Actions</th>
+                <th class="border border-gray-300 px-4 py-2">Acciones</th>
             </tr>
         </thead>
         <tbody>
