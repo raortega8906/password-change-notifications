@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="bg-white p-6 rounded-lg shadow">
-    <form action="#" method="POST">
+    <form action="{{ route('admin.users.store') }}" method="POST">
         @csrf
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
