@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 // Ruta Bienvenida
@@ -35,3 +37,6 @@ Route::delete('/admin/delete/{user}', [UserController::class, 'destroy'])->name(
 // Rutas Usuarios para el Usuario no Admin
 Route::get('/users/edit', [UserController::class, 'editNoAdmin'])->name('users.edit');
 Route::put('/users/update', [UserController::class, 'updateNoAdmin'])->name('users.update');
+
+// Rutas Proyectos
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
