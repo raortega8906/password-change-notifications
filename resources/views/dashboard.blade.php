@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard de Notificaciones')
+@section('title', 'Dashboard')
 
-@section('header', 'Dashboard de Notificaciones')
+@section('header', 'Dashboard')
 
 @section('content')
     <div class="mt-8">
