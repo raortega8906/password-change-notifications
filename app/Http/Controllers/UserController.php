@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserNoAdminRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -62,6 +63,21 @@ class UserController extends Controller
         $user->update($request->validated());
 
         return redirect()->route('admin.users.index', compact('user'));
+    }
+
+    public function editNoAdmin(User $user)
+    {
+        $user = auth()->user();
+
+        return view('users.edit', compact('user'));
+    }
+
+    public function updateNoAdmin(UpdateUserNoAdminRequest $request, User $user)
+    {
+        // dd($request);
+        $user->update($request->validated());
+
+        return redirect()->route('dashboard', compact('user'));
     }
 
     /**

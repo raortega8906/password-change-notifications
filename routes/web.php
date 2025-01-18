@@ -31,3 +31,7 @@ Route::post('/admin/store', [UserController::class, 'store'])->name('admin.users
 Route::get('/admin/edit/{user}', [UserController::class, 'edit'])->name('admin.users.edit');
 Route::put('/admin/update/{user}', [UserController::class, 'update'])->name('admin.users.update');
 Route::delete('/admin/delete/{user}', [UserController::class, 'destroy'])->name('admin.users.delete');
+
+// Rutas Usuarios para el Usuario no Admin
+Route::get('/users/edit', [UserController::class, 'editNoAdmin'])->name('users.edit');
+Route::put('/users/update', [UserController::class, 'updateNoAdmin'])->name('users.update');
