@@ -28,13 +28,16 @@
                 <td class="border border-gray-300 px-4 py-2">{{ $user->name }}</td>
                 <td class="border border-gray-300 px-4 py-2">{{ $user->email }}</td>
                 <td class="border border-gray-300 px-4 py-2 justify-center items-center flex">
-
                     <a href="{{ route('admin.users.edit', $user) }}" class="mr-3 inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                         {{ __('Editar') }}
                     </a>
-                    <a href="{{ route('admin.users.create') }}" class="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
-                        {{ __('Eliminar') }}
-                    </a>
+                    <form action="{{ route('admin.users.delete', $user) }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                            {{ __('Eliminar') }}
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach

@@ -30,3 +30,4 @@ Route::get('/admin/create', [UserController::class, 'create'])->name('admin.user
 Route::post('/admin/store', [UserController::class, 'store'])->name('admin.users.store');
 Route::get('/admin/edit/{user}', [UserController::class, 'edit'])->name('admin.users.edit');
 Route::put('/admin/update/{user}', [UserController::class, 'update'])->name('admin.users.update');
+Route::delete('/admin/delete/{user}', [UserController::class, 'destroy'])->name('admin.users.delete');
