@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="bg-white p-6 rounded-lg shadow">
-    <form action="" method="POST">
+    <form action="{{ route('admin.users.update', $user) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-4">
