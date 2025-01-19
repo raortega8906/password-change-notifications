@@ -14,21 +14,26 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                 </svg>
-                <span class="text-2xl font-extrabold">Notificaciones</span>
+                <span class="text-2xl font-extrabold">{{ __('Notificaciones') }}</span>
             </a>
             <nav>
                 <a href="{{ route('dashboard') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
-                    Dashboard
+                    {{ __('Dashboard') }}
                 </a>
                 <a href="{{ route('projects.index') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
-                    Proyectos
+                    {{ __('Proyectos') }}
                 </a>
                 <a href="{{ route('users.edit') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
-                    Mi perfil
+                    {{ __('Mi perfil') }}
                 </a>
+                
+                <span class="text-[25px] py-3 px-4 font-extrabold">{{ __('Panel Admin') }}</span>
                 @if (Auth::user()->email == 'raortega8906@gmail.com')
                     <a href="{{ route('admin.users.index') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
-                        Usuarios
+                        {{ __('Usuarios') }}
+                    </a>
+                    <a href="{{ route('admin.projects.index') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
+                        {{ __('Proyectos') }}
                     </a>
                 @endif
             </nav>

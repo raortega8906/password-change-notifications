@@ -20,6 +20,13 @@ class ProjectController extends Controller
         return view('projects.index', compact('projects'));
     }
 
+    public function indexAdmin()
+    {
+        $projects = Project::all();
+
+        return view('admin.projects.index', compact('projects'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
