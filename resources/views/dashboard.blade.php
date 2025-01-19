@@ -28,7 +28,7 @@
                     Usuarios Activos
                 </div>
                 <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
-                    45
+                    10
                 </div>
             </div>
         </div>

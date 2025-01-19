@@ -20,8 +20,6 @@ Route::get('/dashboard', [ProjectController::class, 'countProjects'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-
-
 // Rutas Perfil
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
