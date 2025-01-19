@@ -36,9 +36,10 @@ Route::delete('/admin/users/delete/{user}', [UserController::class, 'destroy'])-
 
 // Rutas Usuarios para el Usuario no Admin
 Route::get('/users/edit', [UserController::class, 'editNoAdmin'])->name('users.edit');
-Route::put('/users/update', [UserController::class, 'updateNoAdmin'])->name('users.update');
+Route::put('/users/update/{user}', [UserController::class, 'updateNoAdmin'])->name('users.update');
 
 // Rutas Proyectos
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
 Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
+Route::put('projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');

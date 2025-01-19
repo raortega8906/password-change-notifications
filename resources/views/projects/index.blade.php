@@ -42,9 +42,13 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             @if ($project->status == 'Sin cambiar')
-                                <a href="" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#1565C0] border border-transparent rounded-md hover:bg-[#B3E5FC] hover:text-[#1565C0] focus:outline-none focus:ring">
-                                    {{ __('Marcar como cambiada') }}
-                                </a>
+                                <form action="{{ route('projects.update', $project) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#1565C0] border border-transparent rounded-md hover:bg-[#B3E5FC] hover:text-[#1565C0] focus:outline-none focus:ring">
+                                        {{ __('Marcar como cambiada') }}
+                                    </a>
+                                </form>
                             @else
                                 <button disabled class="px-3 py-1 text-sm font-medium leading-5 text-gray-400 bg-[#F5F5F5] border border-transparent rounded-md cursor-not-allowed">
                                     {{ __('Actualizada') }}
