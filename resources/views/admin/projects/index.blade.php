@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Proyectos')
-@section('header', 'Proyectos')
+@section('header', 'Proyectos') 
 
 @section('content')
 <div class="bg-white p-6 rounded-lg shadow">
@@ -36,14 +36,14 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4">
-                                {{-- <form action="{{ route('admin.projects.delete', $user) }}" method="POST">
+                                <form action="{{ route('admin.projects.delete', $project) }}" method="POST">
                                     @csrf
-                                    @method('delete') --}}
+                                    @method('DELETE')
                                     <button type="submit" 
                                             class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring">
                                         {{ __('Eliminar') }}
                                     </button>
-                                {{-- </form> --}}
+                                </form>
                             </div>
                         </td>
                     </tr>

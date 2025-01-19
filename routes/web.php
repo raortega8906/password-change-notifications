@@ -39,7 +39,8 @@ Route::get('/users/edit', [UserController::class, 'editNoAdmin'])->name('users.e
 Route::put('/users/update/{user}', [UserController::class, 'updateNoAdmin'])->name('users.update');
 
 // Rutas Proyectos para el Usuario Admin
-Route::get('/admin/projects', [ProjectController::class, 'index'])->name('admin.projects.index');
+Route::get('/admin/projects', [ProjectController::class, 'indexAdmin'])->name('admin.projects.index');
+Route::delete('/admin/projects/delete/{project}', [ProjectController::class, 'destroy'])->name('admin.projects.delete');
 
 // Rutas Proyectos
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
