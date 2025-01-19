@@ -16,6 +16,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/dashboard', [ProjectController::class, 'countProjects'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+
+
 // Rutas Perfil
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,4 +52,4 @@ Route::delete('/admin/projects/delete/{project}', [ProjectController::class, 'de
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
 Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
-Route::put('projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');
+Route::put('/projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');

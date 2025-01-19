@@ -26,8 +26,10 @@
                 <a href="{{ route('users.edit') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
                     {{ __('Mi perfil') }}
                 </a>
-                
-                <span class="text-[25px] py-3 px-4 font-extrabold">{{ __('Panel Admin') }}</span>
+
+                <div class="py-3 mt-6">
+                    <span class="text-[25px] py-3 px-4 font-extrabold">{{ __('Panel Admin') }}</span>
+                </div>
                 @if (Auth::user()->email == 'raortega8906@gmail.com')
                     <a href="{{ route('admin.users.index') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#B3E5FC] hover:text-[#1565C0]">
                         {{ __('Usuarios') }}

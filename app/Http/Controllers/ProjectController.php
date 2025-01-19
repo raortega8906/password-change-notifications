@@ -8,6 +8,8 @@ use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\returnSelf;
+
 class ProjectController extends Controller
 {
     /**
@@ -84,5 +86,14 @@ class ProjectController extends Controller
         $project->delete();
 
         return redirect()->route('admin.projects.index', compact('project'));
+    }
+
+    public function countProjects()
+    {
+        $countProjects = Project::where('user_id', auth()->id())
+        ->where('status', 'sin cambiar')
+        ->count();
+        
+        return view('dashboard', compact('countProjects'));
     }
 }

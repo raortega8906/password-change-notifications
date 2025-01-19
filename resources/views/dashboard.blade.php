@@ -9,10 +9,10 @@
         <div class="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
                 <div class="text-sm font-medium text-[#1565C0] truncate">
-                    Proyectos Sin Cambiar
+                    Proyectos Sin Actualizar Contraseña
                 </div>
                 <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
-                    8
+                    <span>{{ $countProjects }}</span>
                 </div>
             </div>
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
