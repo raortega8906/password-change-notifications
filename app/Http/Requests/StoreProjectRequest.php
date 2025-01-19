@@ -23,8 +23,6 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
-            'user_id' => 'required|string|max:255',
         ];
     }
 }
