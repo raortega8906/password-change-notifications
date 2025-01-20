@@ -1,44 +1,44 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Notifications;
 
-use Illuminate\Console\Command;
-use App\Models\User;
-use App\Notifications\DailyProjectStatusNotification;
+use App\Models\Project;
+use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 
-class SendDailyNotifications extends Command
+class DailyProjectStatusNotification extends Notification
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'app:send-daily-notifications';
+    protected $projects;
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Send daily notifications to users with projects marked as "Sin cambiar".';
-
-    /**
-     * Execute the console command.
-     */
-    public function handle()
+    // Recibe los proyectos con estado "Sin cambiar"
+    public function __construct($projects)
     {
-        // Get all users with at least one project with status "Sin cambiar"
-        $users = User::whereHas('projects', function ($query) {
-            $query->where('status', 'Sin cambiar');
-        })->get();
+        $this->projects = $projects;
+    }
 
-        foreach ($users as $user) {
-            $projects = $user->projects()->where('status', 'Sin cambiar')->get();
+    // El método toMail permite definir el mensaje de la notificación
+    public function toMail($notifiable)
+    {
+        $mailMessage = (new MailMessage)
+            ->subject('Estado de los proyectos - Notificación diaria')
+            ->greeting('¡Hola!');
 
-            // Notify the user
-            $user->notify(new DailyProjectStatusNotification($projects));
+        if ($this->projects->isEmpty()) {
+            $mailMessage->line('No tienes proyectos con estado "Sin cambiar".');
+        } else {
+            $mailMessage->line('Tienes los siguientes proyectos con estado "Sin cambiar":');
+            foreach ($this->projects as $project) {
+                $mailMessage->line("Proyecto: {$project->name}");
+            }
         }
 
-        $this->info('Daily notifications sent successfully.');
+        $mailMessage->line('Este es un recordatorio para que revises tus proyectos.');
+
+        return $mailMessage;
+    }
+
+    public function via($notifiable)
+    {
+        return ['mail'];  // O puedes agregar otros canales como 'database' o 'broadcast'
     }
 }
