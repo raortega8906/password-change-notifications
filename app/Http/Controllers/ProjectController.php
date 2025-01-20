@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use function PHPUnit\Framework\returnSelf;
@@ -88,12 +89,63 @@ class ProjectController extends Controller
         return redirect()->route('admin.projects.index', compact('project'));
     }
 
-    public function countProjects()
+    public function varsDashboard()
     {
         $countProjects = Project::where('user_id', auth()->id())
         ->where('status', 'sin cambiar')
         ->count();
+
+        $countProjectsTotal = Project::where('user_id', auth()->id())->count();
+
+        Carbon::setLocale('es');
+        $nameMonth = Carbon::now()->translatedFormat('F');
+
+        if($nameMonth == 'febrero' || $nameMonth == 'marzo' || $nameMonth == 'abril')
+        {
+            if($nameMonth == 'abril')
+            {
+                $nameMonth = "Mes actual";
+            }
+            else
+            {
+                $nameMonth = 'Abril';
+            }
+            
+        }
+        elseif($nameMonth == 'mayo' || $nameMonth == 'junio' || $nameMonth == 'julio')
+        {
+            if($nameMonth == 'julio')
+            {
+                $nameMonth = "Mes actual";
+            }
+            else
+            {
+                $nameMonth = 'Julio';
+            }
+        }
+        elseif($nameMonth == 'agosto' || $nameMonth == 'septiembre' || $nameMonth == 'octubre')
+        {
+            if($nameMonth == 'octubre')
+            {
+                $nameMonth = "Mes actual";
+            }
+            else
+            {
+                $nameMonth = 'Octubre';
+            }
+        }
+        else 
+        {
+            if($nameMonth == 'enero')
+            {
+                $nameMonth = "Mes actual";
+            }
+            else
+            {
+                $nameMonth = 'Enero';
+            }
+        }
         
-        return view('dashboard', compact('countProjects'));
+        return view('dashboard', compact('countProjects', 'countProjectsTotal', 'nameMonth'));
     }
 }

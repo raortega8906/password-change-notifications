@@ -16,7 +16,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', [ProjectController::class, 'countProjects'])
+Route::get('/dashboard', [ProjectController::class, 'varsDashboard'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 

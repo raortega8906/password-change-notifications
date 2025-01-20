@@ -17,18 +17,18 @@
             </div>
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
                 <div class="text-sm font-medium text-[#1565C0] truncate">
-                    Notificaciones Pendientes
+                    Cantidad de Proyectos Asociados
                 </div>
                 <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
-                    15
+                    {{ $countProjectsTotal }}
                 </div>
             </div>
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
                 <div class="text-sm font-medium text-[#1565C0] truncate">
-                    Usuarios Activos
+                    Próxima Fecha de Actualización
                 </div>
                 <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
-                    10
+                    {{ $nameMonth }}
                 </div>
             </div>
         </div>
