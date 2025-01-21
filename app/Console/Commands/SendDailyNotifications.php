@@ -39,6 +39,6 @@ class DailyProjectStatusNotification extends Notification
 
     public function via($notifiable)
     {
-        return ['mail'];  // O puedes agregar otros canales como 'database' o 'broadcast'
+        return ['mail'];  // Enviar la notificación por correo electrónico
     }
 }
