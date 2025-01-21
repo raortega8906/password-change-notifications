@@ -24,5 +24,6 @@ class Kernel extends ConsoleKernel
     {
         // Programa el comando para que se ejecute diariamente
         $schedule->command('notifications:send-daily')->daily();
+        
     }
 }
