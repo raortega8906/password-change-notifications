@@ -24,12 +24,11 @@ class Kernel extends ConsoleKernel
                     $user->notify(new \App\Notifications\DailyProjectStatusNotification($projects));
                 }
             }
-        });
-        // ->hourly() // Ejecutar cada hora
-        //   ->when(function () {
-        //       $month = now()->month; // Mes actual
-        //       return in_array($month, [1, 4, 7, 10]); // Solo en enero, abril, julio y octubre
-        //   });
+        })->hourly() // Ejecutar cada hora
+          ->when(function () {
+              $month = now()->month; // Mes actual
+              return in_array($month, [1, 4, 7, 10]); // Solo en enero, abril, julio y octubre
+          });
     }
 
     /**
