@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="{{ asset('build/manifest.json') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <title>@yield('title', 'Panel de Notificaciones')</title>
     @vite('resources/css/app.css')
 </head>
