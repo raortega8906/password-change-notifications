@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Sistema de Notificaciones de Contraseña') }}</title>
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('./favicon-not.ico') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('./favicon-not.svg') }}">
     @vite('resources/css/app.css')
     <style>
         .bg-primary { background-color: #1565C0; }

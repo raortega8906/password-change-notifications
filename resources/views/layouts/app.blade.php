@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="{{ asset('manifest.json') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon-not.ico') }}">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon-not.svg') }}">
     <title>@yield('title', 'Panel de Notificaciones')</title>
     @vite('resources/css/app.css')
 </head>
