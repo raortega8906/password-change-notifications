@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
-use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 use function PHPUnit\Framework\returnSelf;
 

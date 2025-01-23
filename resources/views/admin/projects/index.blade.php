@@ -32,7 +32,7 @@
                             </span>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            {{ $project->updated_at }}
+                            {{ ucfirst($project->updated_at->diffForHumans()) }}
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4">

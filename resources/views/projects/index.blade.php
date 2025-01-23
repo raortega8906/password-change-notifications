@@ -38,7 +38,7 @@
                             </span>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            {{ $project->updated_at }}
+                            {{ ucfirst($project->updated_at->diffForHumans()) }}
                         </td>
                         <td class="px-4 py-3 text-sm">
                             @if ($project->status == 'Sin cambiar')
