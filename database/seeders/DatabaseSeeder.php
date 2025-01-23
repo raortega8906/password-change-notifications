@@ -21,7 +21,64 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('Lala..1993'),
         ]);
 
-        User::factory(10)->create();
-        Project::factory(10)->create();
+        // Seeders randoms
+        // User::factory(10)->create();
+        // Project::factory(10)->create();
+
+        // Creamos los usuarios
+        $users = [
+            'Ernesto',
+            'Linda',
+            'Maria Alvarez',
+            'Maria Castillo',
+            'Victor',
+            'Mar Garcia',
+            'Javier',
+        ];
+
+        foreach ($users as $name) {
+            $name = str_replace(' ', '', $name);
+            $name = strtolower($name);
+            User::create([
+                'name' => $name,
+                'email' => $name . '@test.test',
+                'password' => Hash::make('Lala..1993'),
+            ]);
+        }
+
+        // Obtenemos todos los usuarios creados
+        $allUsers = User::all();
+
+        // Creamos los proyectos, asignando un usuario aleatorio a cada uno
+        $proyectos = [
+            'Código Media',
+            'Tena España - Centrada en ti',
+            'Tena Italia - Dedicato a me',
+            'Landing - Ultima menopausa da sola',
+            'Tena Grecia - Syn seola',
+            'Tena Portugal - Centrada em si',
+            'Ford - The SUV Master',
+            'Ford - Club Privilegio',
+            'Ford - Sales Pro Talent',
+            'Ibermedia - Programa Ibermedia',
+            'Ibermedia - Ibermedia Digital',
+            'Fitecbot',
+            'Eurologística',
+            'Vintage Ibiza',
+            'Fundación Real Madrid',
+            'Amaya Sangil',
+            'Jesús nos cuenta',
+            'Revista Me & My Mazda',
+            'Virtual Vendor Video',
+            'Lambda 3'
+        ];
+
+        foreach ($proyectos as $proyecto) {
+            Project::create([
+                'name' => $proyecto,
+                'status' => 'Sin cambiar',
+                'user_id' => $allUsers->random()->id,
+            ]);
+        }
     }
 }
