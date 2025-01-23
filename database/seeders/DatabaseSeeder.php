@@ -37,11 +37,11 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($users as $name) {
-            $name = str_replace(' ', '', $name);
-            $name = strtolower($name);
+            $name_modified = str_replace(' ', '', $name);
+            $name_modified = strtolower($name);
             User::create([
                 'name' => $name,
-                'email' => $name . '@test.test',
+                'email' => $name_modified . '@test.test',
                 'password' => Hash::make('Lala..1993'),
             ]);
         }
