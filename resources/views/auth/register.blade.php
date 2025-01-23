@@ -1,3 +1,5 @@
+<link rel="icon" type="image/x-icon" href="{{ asset('./favicon-not.ico') }}">
+<link rel="icon" type="image/svg+xml" href="{{ asset('./favicon-not.svg') }}">
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf

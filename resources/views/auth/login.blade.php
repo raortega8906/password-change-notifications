@@ -1,3 +1,5 @@
+<link rel="icon" type="image/x-icon" href="{{ asset('./favicon-not.ico') }}">
+<link rel="icon" type="image/svg+xml" href="{{ asset('./favicon-not.svg') }}">
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
