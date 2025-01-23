@@ -91,6 +91,8 @@ class ProjectController extends Controller
 
     public function varsDashboard()
     {
+        $projectsWithoutChange = Project::all()->where('user_id', auth()->id())->where('status', 'Sin cambiar');
+
         $countProjects = Project::where('user_id', auth()->id())
         ->where('status', 'sin cambiar')
         ->count();
@@ -146,6 +148,6 @@ class ProjectController extends Controller
             }
         }
         
-        return view('dashboard', compact('countProjects', 'countProjectsTotal', 'nameMonth'));
+        return view('dashboard', compact('countProjects', 'countProjectsTotal', 'nameMonth', 'projectsWithoutChange'));
     }
 }
