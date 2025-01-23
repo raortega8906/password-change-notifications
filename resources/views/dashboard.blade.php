@@ -42,8 +42,8 @@
                         <tr class="text-xs font-semibold tracking-wide text-left text-[#1565C0] uppercase border-b bg-[#FFFFFF]">
                             <th class="px-4 py-3">{{ __('Proyecto') }}</th>
                             <th class="px-4 py-3">{{ __('Estado') }}</th>
-                            <th class="px-4 py-3">{{ __('Última Actualización') }}</th>
-                            <th class="px-4 py-3">{{ __('Acciones') }}</th>
+                            <th class="px-4 py-3 flex justify-center">{{ __('Última Actualización de contraseña') }}</th>
+                            {{-- <th class="px-4 py-3">{{ __('Acciones') }}</th> --}}
                         </tr>
                     </thead>
                     <tbody class="bg-[#FFFFFF] divide-y">
@@ -62,14 +62,14 @@
                                 {{ $projectWC->status }}
                             </span>
                         </td>
-                        <td class="px-4 py-3 text-sm">
-                            {{ $projectWC->updated_at }}
+                        <td class="px-4 py-3 text-sm flex justify-center">
+                            {{ ucfirst($projectWC->updated_at->diffForHumans()) }}
                         </td>
-                        <td class="px-4 py-3 text-sm"> 
+                        {{-- <td class="px-4 py-3 text-sm"> 
                             <button disabled class="px-3 py-1 text-sm font-medium leading-5 text-gray-400 bg-[#F5F5F5] border border-transparent rounded-md cursor-not-allowed">
                                 {{ __('Actualizada') }}
                             </button>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                     </tbody>
