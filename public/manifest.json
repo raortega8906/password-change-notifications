@@ -1,24 +1,14 @@
 {
     "name": "Notifications",
     "short_name": "LaravelApp",
-    "theme_color": "#000000",
+    "theme_color": "#1565C",
     "background_color": "#ffffff",
     "start_url": "/",
     "display": "standalone",
     "icons": [
       {
         "src": "/favicon-not.ico",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/favicon-not.ico",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-      {
-        "src": "/favicon-not.ico",
-        "sizes": "192x192",
+        "sizes": "75x75",
         "type": "image/ico"
       }
     ]

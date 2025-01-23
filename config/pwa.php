@@ -10,12 +10,7 @@ return [
     'icons' => [
         [
             "src" =>  "/favicon-not.ico",
-            'sizes' => '192x192',
-            'type' => 'image/ico',
-        ],
-        [
-            "src" =>  "/favicon-not.ico",
-            'sizes' => '512x512',
+            'sizes' => '75x75',
             'type' => 'image/ico',
         ],
     ],

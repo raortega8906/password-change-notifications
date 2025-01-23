@@ -97,5 +97,16 @@
             </div>
         </div>
     </div>
+    <script>
+        self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => caches.delete(cacheName))
+            );
+        })
+    );
+});
+    </script>
 </body>
 </html>
