@@ -63,7 +63,7 @@
                             </span>
                         </td>
                         <td class="px-4 py-3 text-sm flex justify-center">
-                            {{ ucfirst($projectWC->updated_at->diffForHumans()) }}
+                            {{ ucfirst($projectWC->updated_at->locale('es')->diffForHumans()) }}
                         </td>
                         {{-- <td class="px-4 py-3 text-sm"> 
                             <button disabled class="px-3 py-1 text-sm font-medium leading-5 text-gray-400 bg-[#F5F5F5] border border-transparent rounded-md cursor-not-allowed">

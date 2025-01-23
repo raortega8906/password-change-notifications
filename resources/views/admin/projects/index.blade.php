@@ -32,7 +32,7 @@
                             </span>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            {{ ucfirst($project->updated_at->diffForHumans()) }}
+                            {{ ucfirst($project->updated_at->locale('es')->diffForHumans()) }}
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4">
