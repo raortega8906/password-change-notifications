@@ -11,7 +11,7 @@
     <style>
         .bg-primary { background-color: #17630e; }
         .text-primary { color: #17630e; }
-        .hover\:text-primary-light:hover { color: #1E88E5; }
+        .hover\:text-primary-light:hover { color: #fff; }
     </style>
 </head>
 <body class="antialiased bg-gray-100">
