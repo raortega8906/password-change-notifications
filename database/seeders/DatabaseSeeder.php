@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Rafael A. Ortega',
             'email' => 'raortega8906@gmail.com',
             'password' => Hash::make('Lala..1993'),
+            'is_admin' => true,
         ]);
 
         // Seeders randoms
