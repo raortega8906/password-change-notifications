@@ -9,8 +9,8 @@
     <link rel="icon" type="image/svg+xml" href="{{ asset('./favicon-not.svg') }}">
     @vite('resources/css/app.css')
     <style>
-        .bg-primary { background-color: #1565C0; }
-        .text-primary { color: #1565C0; }
+        .bg-primary { background-color: #17630e; }
+        .text-primary { color: #17630e; }
         .hover\:text-primary-light:hover { color: #1E88E5; }
     </style>
 </head>
@@ -99,14 +99,14 @@
     </div>
     <script>
         self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => caches.delete(cacheName))
+            event.waitUntil(
+                caches.keys().then((cacheNames) => {
+                    return Promise.all(
+                        cacheNames.map((cacheName) => caches.delete(cacheName))
+                    );
+                })
             );
-        })
-    );
-});
+        });
     </script>
 </body>
 </html>
