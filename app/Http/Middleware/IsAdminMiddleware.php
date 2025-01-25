@@ -15,6 +15,10 @@ class IsAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (!auth()->check()) {
+            return redirect('/login'); // Redirige al login si no está autenticado
+        }
+        
         if(!auth()->user()->is_admin)
         {
             abort(403, 'No autorizado');
