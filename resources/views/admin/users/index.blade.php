@@ -7,14 +7,14 @@
 <div class="bg-white p-6 rounded-lg shadow">
     
     <div class="flex items-center">
-        <a href="{{ route('admin.users.create') }}" class="mb-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        <a href="{{ route('admin.users.create') }}" class="mb-3 inline-flex justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
             {{ __('Crear usuario') }}
         </a>
     </div>
 
     <table class="w-full whitespace-no-wrap">
                 <thead>
-                    <tr class="text-xs font-semibold tracking-wide text-left text-[#1565C0] uppercase border-b bg-[#FFFFFF]">
+                    <tr class="text-xs font-semibold tracking-wide text-left text-[#17630e] uppercase border-b bg-[#FFFFFF]">
                         <th class="px-4 py-3">{{ __('ID') }}</th>
                         <th class="px-4 py-3">{{ __('Nombre') }}</th>
                         <th class="px-4 py-3">{{ __('Email') }}</th>
@@ -40,7 +40,7 @@
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4">
                                 <a href="{{ route('admin.users.edit', $user) }}" 
-                                   class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#1565C0] border border-transparent rounded-md hover:bg-[#B3E5FC] hover:text-[#1565C0] focus:outline-none focus:ring">
+                                   class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#17630e] border border-transparent rounded-md hover:bg-[#d5f5e3] hover:text-[#17630e] focus:outline-none focus:ring">
                                     {{ __('Editar') }}
                                 </a>
                                 <form action="{{ route('admin.users.delete', $user) }}" method="POST">

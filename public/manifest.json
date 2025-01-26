@@ -1,7 +1,7 @@
 {
   "name": "Notifications",
   "short_name": "LaravelApp",
-  "theme_color": "#1565C0",
+  "theme_color": "#17630e",
   "background_color": "#ffffff",
   "start_url": "/",
   "display": "standalone",

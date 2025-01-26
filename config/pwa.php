@@ -3,7 +3,7 @@
 return [
     'name' => 'Notifications',            // Nombre de la PWA
     'short_name' => 'LaravelApp',                 // Nombre corto que aparece en la pantalla de inicio
-    'theme_color' => '#1565C0',                   // Color del tema para la barra de estado
+    'theme_color' => '#17630e',                   // Color del tema para la barra de estado
     'background_color' => '#ffffff',              // Color de fondo de la pantalla de inicio
     'start_url' => '/',                           // URL de inicio de la PWA
     'display' => 'standalone',                    // Modo de visualización, puede ser 'fullscreen', 'standalone', 'minimal-ui'

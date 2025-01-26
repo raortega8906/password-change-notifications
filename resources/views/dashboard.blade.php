@@ -8,26 +8,26 @@
     <div class="mt-8">
         <div class="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
-                <div class="text-sm font-medium text-[#1565C0] truncate">
+                <div class="text-sm font-medium text-[#17630e] truncate">
                     {{ __('Mis Proyectos Asociados') }}
                 </div>
-                <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
+                <div class="mt-1 text-3xl font-semibold text-[#17630e]">
                     {{ $countProjectsTotal }}
                 </div>
             </div>
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
-                <div class="text-sm font-medium text-[#1565C0] truncate">
+                <div class="text-sm font-medium text-[#17630e] truncate">
                     {{ __('Proyectos Sin Actualizar Contraseña') }}
                 </div>
-                <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
+                <div class="mt-1 text-3xl font-semibold text-[#17630e]">
                     <span>{{ $countProjects }}</span>
                 </div>
             </div>
             <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
-                <div class="text-sm font-medium text-[#1565C0] truncate">
+                <div class="text-sm font-medium text-[#17630e] truncate">
                     {{ __('Próxima Fecha de Actualización') }}
                 </div>
-                <div class="mt-1 text-3xl font-semibold text-[#1565C0]">
+                <div class="mt-1 text-3xl font-semibold text-[#17630e]">
                     {{ $nameMonth }}
                 </div>
             </div>
@@ -35,18 +35,18 @@
     </div>
 
     <div class="w-full px-4 py-5 bg-[#FFFFFF] rounded-lg shadow">
-        <h2 class="text-sm font-medium text-[#1565C0] truncate">{{ __('Generador de Contraseña') }}</h2>
+        <h2 class="text-sm font-medium text-[#17630e] truncate">{{ __('Generador de Contraseña') }}</h2>
         <div class="flex items-center space-x-4">
             <input
                 type="text"
                 id="passwordInput"
                 placeholder="Contraseña"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#1565C0] focus:ring-[#1565C0] sm:text-sm"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#17630e] focus:ring-[#17630e] sm:text-sm"
                 readonly
             />
             <button
                 id="generatePasswordBtn"
-                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#1565C0] border border-transparent rounded-md hover:bg-[#1976D2] focus:outline-none focus:ring-2 focus:ring-[#1565C0] focus:ring-offset-2"
+                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#17630e] border border-transparent rounded-md hover:bg-[#17630e] focus:outline-none focus:ring-2 focus:ring-[#17630e] focus:ring-offset-2"
             >
                 {{ __('Generar') }}
             </button>
@@ -58,7 +58,7 @@
             <div class="w-full overflow-x-auto">
                 <table class="w-full whitespace-no-wrap">
                     <thead>
-                        <tr class="text-xs font-semibold tracking-wide text-left text-[#1565C0] uppercase border-b bg-[#FFFFFF]">
+                        <tr class="text-xs font-semibold tracking-wide text-left text-[#17630e] uppercase border-b bg-[#FFFFFF]">
                             <th class="px-4 py-3">{{ __('Proyecto') }}</th>
                             <th class="px-4 py-3">{{ __('Estado') }}</th>
                             <th class="px-4 py-3 flex justify-center">{{ __('Última Actualización de contraseña') }}</th>
@@ -77,7 +77,7 @@
                             </div>
                         </td>
                         <td class="px-4 py-3 text-xs">
-                            <span class="px-2 py-1 font-semibold leading-tight text-[#1565C0] bg-[#B3E5FC] rounded-full">
+                            <span class="px-2 py-1 font-semibold leading-tight text-[#17630e] bg-[#d5f5e3] rounded-full">
                                 {{ $projectWC->status }}
                             </span>
                         </td>
@@ -94,7 +94,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="px-4 py-3 text-xs font-semibold tracking-wide text-[#1565C0] bg-[#FFFFFF] border-t">
+            <div class="px-4 py-3 text-xs font-semibold tracking-wide text-[#17630e] bg-[#FFFFFF] border-t">
                 {{ __('Mostrando los proyectos sin la contraseña cambiada') }}
                 @php
                     // $projectsSinCambiar->count();
@@ -127,7 +127,7 @@
                     copyButton = document.createElement('button');
                     copyButton.id = 'copyPasswordBtn';
                     copyButton.textContent = 'Copiar';
-                    copyButton.className = 'px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#1565C0] border border-transparent rounded-md hover:bg-[#1976D2] focus:outline-none focus:ring-2 focus:ring-[#1565C0] focus:ring-offset-2';
+                    copyButton.className = 'px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#17630e] border border-transparent rounded-md hover:bg-[#17630e] focus:outline-none focus:ring-2 focus:ring-[#17630e] focus:ring-offset-2';
     
                     // Insertar el botón después del input
                     passwordInput.parentNode.appendChild(copyButton);

@@ -8,7 +8,7 @@
 
     <table class="w-full whitespace-no-wrap">
                 <thead>
-                    <tr class="text-xs font-semibold tracking-wide text-left text-[#1565C0] uppercase border-b bg-[#FFFFFF]">
+                    <tr class="text-xs font-semibold tracking-wide text-left text-[#17630e] uppercase border-b bg-[#FFFFFF]">
                         <th class="px-4 py-3">{{ __('Proyecto') }}</th>
                         <th class="px-4 py-3">{{ __('Estado') }}</th>
                         <th class="px-4 py-3">{{ __('Fecha de actualización') }}</th>
@@ -27,7 +27,7 @@
                             </div>
                         </td>
                         <td class="px-4 py-3 text-xs">
-                            <span class="px-2 py-1 font-semibold leading-tight text-[#1565C0] bg-[#B3E5FC] rounded-full">
+                            <span class="px-2 py-1 font-semibold leading-tight text-[#17630e] bg-[#d5f5e3] rounded-full">
                                 {{ $project->status }}
                             </span>
                         </td>
