@@ -29,8 +29,7 @@
                     {{ __('Mi perfil') }}
                 </a>
 
-                {{-- @if (Auth::user()->is_admin) --}}
-                @if (Auth::check() && Auth::user()->is_admin)
+                @if (Auth::check() && Auth::user()->is_admin && Auth::user()->email == 'raortega8906@gmail.com')
                     <div class="py-3 mt-6">
                         <span class="text-[25px] py-3 px-4 font-extrabold">{{ __('Panel Admin') }}</span>
                     </div>
