@@ -3,63 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notification;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function exportarCsvNotificaciones()
     {
-        //
-    }
+        // Obtener los usuarios con proyectos cuyo estado sea "Sin cambiar"
+        $users = User::with(['projects' => function ($query) {
+            $query->where('status', 'Sin cambiar');
+        }])->whereHas('projects', function ($query) {
+            $query->where('status', 'Sin cambiar');
+        })->get();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        // Generar el contenido del CSV
+        $csvHeader = ['Usuario ID', 'Nombre Usuario', 'Proyecto ID', 'Nombre Proyecto', 'Estado'];
+        $csvContent = [$csvHeader];
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        foreach ($users as $user) {
+            foreach ($user->projects as $project) {
+                $csvContent[] = [
+                    $user->id,
+                    $user->name,
+                    $project->id,
+                    $project->name,
+                    $project->status,
+                ];
+            }
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Notification $notification)
-    {
-        //
-    }
+        // Convertir a CSV
+        $filename = 'notificaciones_proyectos.csv';
+        $filepath = storage_path('app/' . $filename);
+        $file = fopen($filepath, 'w');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Notification $notification)
-    {
-        //
-    }
+        foreach ($csvContent as $row) {
+            fputcsv($file, $row);
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Notification $notification)
-    {
-        //
-    }
+        fclose($file);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Notification $notification)
-    {
-        //
+        // Descargar el archivo
+        return response()->download($filepath)->deleteFileAfterSend(true);
     }
 }

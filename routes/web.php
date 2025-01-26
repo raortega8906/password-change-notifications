@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
@@ -25,6 +26,9 @@ Route::middleware('auth')->group(function () {
 
     // Rutas Middleware para el Admin
     Route::middleware([IsAdminMiddleware::class])->group(function () {
+
+        // Rutas Notificaciones para el Admin
+        Route::get('/admin/notifications', [NotificationController::class, 'exportarCsvNotificaciones'])->name('admin.notifications.csv');
 
         // Rutas Usuarios para el Admin 
         Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users.index');

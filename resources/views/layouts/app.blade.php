@@ -39,6 +39,10 @@
                     <a href="{{ route('admin.projects.index') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#d5f5e3] hover:text-[#17630e]">
                         {{ __('Proyectos') }}
                     </a>
+
+                    <a href="{{ route('admin.notifications.csv') }}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-[#d5f5e3] hover:text-[#17630e]">
+                        {{ __('Exportar CSV') }}
+                    </a>
                 @endif
             </nav>
         </div>
