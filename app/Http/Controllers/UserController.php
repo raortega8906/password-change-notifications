@@ -31,19 +31,10 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        // dd($request);
         $user = User::create($request->validated());
 
         return redirect()->route('admin.users.index', compact('user'));
     }
-
-    /**
-     * Display the specified resource.
-     */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -65,7 +56,6 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        // dd($request);
         $user->update($request->validated());
 
         return redirect()->route('admin.users.index', compact('user'));
@@ -73,7 +63,6 @@ class UserController extends Controller
 
     public function updateNoAdmin(UpdateUserNoAdminRequest $request, User $user)
     {
-        // dd($request);
         $user->update($request->validated());
 
         return redirect()->route('dashboard', compact('user'));

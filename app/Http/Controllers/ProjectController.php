@@ -50,22 +50,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    // public function show(Project $project)
-    // {
-    //     //
-    // }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    // public function edit(Project $project)
-    // {
-    //     //
-    // }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateProjectRequest $request, Project $project)
