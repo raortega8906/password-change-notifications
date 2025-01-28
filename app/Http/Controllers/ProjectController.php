@@ -7,8 +7,6 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Carbon\Carbon;
 
-use function PHPUnit\Framework\returnSelf;
-
 class ProjectController extends Controller
 {
     /**
