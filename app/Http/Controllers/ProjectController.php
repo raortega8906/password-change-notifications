@@ -71,6 +71,9 @@ class ProjectController extends Controller
         return redirect()->route('admin.projects.index', compact('project'));
     }
 
+    /**
+     * Add resources to the dashboard
+     */
     public function varsDashboard()
     {
         $projectsWithoutChange = Project::all()->where('user_id', auth()->id())->where('status', 'Sin cambiar');
