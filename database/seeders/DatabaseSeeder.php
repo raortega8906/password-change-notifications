@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,7 +21,6 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
-        // Seeders randoms
         // User::factory(10)->create();
         // Project::factory(10)->create();
 

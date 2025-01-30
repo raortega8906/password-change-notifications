@@ -2,7 +2,6 @@
 
 namespace App\Notifications;
 
-use App\Models\Project;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 

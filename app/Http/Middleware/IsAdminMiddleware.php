@@ -16,7 +16,7 @@ class IsAdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (!auth()->check()) {
-            return redirect('/login'); // Redirige al login si no está autenticado
+            return redirect('/login');
         }
         
         if(!auth()->user()->is_admin)
