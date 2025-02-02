@@ -98,6 +98,8 @@
         </div>
     </div>
     <script>
+        alert('Para probar el sistema, por favor, inicia sesión con el usuario "admin@admin.com" y la contraseña "admin".');
+
         self.addEventListener('activate', (event) => {
             event.waitUntil(
                 caches.keys().then((cacheNames) => {
