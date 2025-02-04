@@ -18,6 +18,7 @@
                         <th class="px-4 py-3">{{ __('ID') }}</th>
                         <th class="px-4 py-3">{{ __('Nombre') }}</th>
                         <th class="px-4 py-3">{{ __('Email') }}</th>
+                        <th class="px-4 py-3">{{ __('Proyectos') }}</th>
                         <th class="px-4 py-3">{{ __('Acciones') }}</th>
                     </tr>
                 </thead>
@@ -36,6 +37,9 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             {{ $user->email }}
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            {{ $user->projects->count() }} {{ __('asociados') }}
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <div class="flex items-center space-x-4">

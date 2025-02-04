@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserNoAdminRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Project;
 use App\Models\User;
 
 class UserController extends Controller
@@ -15,6 +16,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        // $projects = Project::all()->where('user_id', auth()->id())->count();
+
+        // dd($projects);
+
         return view('admin.users.index', compact('users'));
     }
 
