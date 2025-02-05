@@ -31,11 +31,11 @@
                     </a>
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm font-medium hover:text-primary-light">{{ __'Dashboard' }}</a>
+                            <a href="{{ url('/dashboard') }}" class="text-sm font-medium hover:text-primary-light">{{ __('Dashboard') }}</a>
                         @else
-                            <a href="{{ route('login') }}" class="text-sm font-medium hover:text-primary-light">{{ __'Iniciar sesión' }}</a>
+                            <a href="{{ route('login') }}" class="text-sm font-medium hover:text-primary-light">{{ __('Iniciar sesión') }}</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="text-sm font-medium hover:text-primary-light">{{ __'Registrarse' }}</a>
+                                <a href="{{ route('register') }}" class="text-sm font-medium hover:text-primary-light">{{ __('Registrarse') }}</a>
                             @endif
                         @endauth
                     @endif
@@ -47,8 +47,8 @@
     <div class="min-h-screen flex flex-col justify-center items-center py-12">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-primary mb-4">{{ __'Sistema de Notificaciones de Contraseña' }}</h1>
-                <p class="text-xl text-gray-600">{{ __'Gestiona tus proyectos y mantén tus contraseñas actualizadas' }}</p>
+                <h1 class="text-4xl font-bold text-primary mb-4">{{ __('Sistema de Notificaciones de Contraseña') }}</h1>
+                <p class="text-xl text-gray-600">{{ __('Gestiona tus proyectos y mantén tus contraseñas actualizadas') }}</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -56,12 +56,12 @@
                     <div class="p-6">
                         <div class="flex items-center mb-4">
                             <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                            <h2 class="ml-4 text-2xl font-semibold text-gray-800">{{ __'Gestión de Contraseñas' }}</h2>
+                            <h2 class="ml-4 text-2xl font-semibold text-gray-800">{{ __('Gestión de Contraseñas') }}</h2>
                         </div>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>{{ __'Cada proyecto tiene un estado de contraseña (Sin cambiar o Cambiada).' }}</li>
-                            <li>{{ __'El estado se reinicia automáticamente a "Sin cambiar" cada 3 meses.' }}</li>
-                            <li>{{ __'Los usuarios pueden actualizar el estado a "Cambiada" en su panel de control.' }}</li>
+                            <li>{{ __('Cada proyecto tiene un estado de contraseña (Sin cambiar o Cambiada).') }}</li>
+                            <li>{{ __('El estado se reinicia automáticamente a "Sin cambiar" cada 3 meses.') }}</li>
+                            <li>{{ __('Los usuarios pueden actualizar el estado a "Cambiada" en su panel de control.') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -70,12 +70,12 @@
                     <div class="p-6">
                         <div class="flex items-center mb-4">
                             <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                            <h2 class="ml-4 text-2xl font-semibold text-gray-800">{{ __'Sistema de Notificaciones' }}</h2>
+                            <h2 class="ml-4 text-2xl font-semibold text-gray-800">{{ __('Sistema de Notificaciones') }}</h2>
                         </div>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>{{ __'Notificaciones generadas automáticamente para proyectos con estado "Sin cambiar".' }}</li>
-                            <li>{{ __'Enviadas diariamente hasta que todos los proyectos estén marcados como "Cambiada".' }}</li>
-                            <li>{{ __'Los usuarios reciben notificaciones sobre los proyectos que necesitan actualización.' }}</li>
+                            <li>{{ __('Notificaciones generadas automáticamente para proyectos con estado "Sin cambiar".') }}</li>
+                            <li>{{ __('Enviadas diariamente hasta que todos los proyectos estén marcados como "Cambiada".') }}</li>
+                            <li>{{ __('Los usuarios reciben notificaciones sobre los proyectos que necesitan actualización.') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -85,13 +85,13 @@
                 <div class="p-6">
                     <div class="flex items-center mb-4">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                        <h2 class="ml-4 text-2xl font-semibold text-gray-800">{{ __'Características del Sistema' }}</h2>
+                        <h2 class="ml-4 text-2xl font-semibold text-gray-800">{{ __('Características del Sistema') }}</h2>
                     </div>
                     <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>{{ __'Los usuarios se autentican para acceder al sistema.' }}</li>
-                        <li>{{ __'Cada usuario tiene una lista de proyectos asignados.' }}</li>
-                        <li>{{ __'Panel de control para ver y gestionar los estados de las contraseñas.' }}</li>
-                        <li>{{ __'Automatización mediante cron jobs para actualizar estados y enviar notificaciones.' }}</li> 
+                        <li>{{ __('Los usuarios se autentican para acceder al sistema.') }}</li>
+                        <li>{{ __('Cada usuario tiene una lista de proyectos asignados.') }}</li>
+                        <li>{{ __('Panel de control para ver y gestionar los estados de las contraseñas.') }}</li>
+                        <li>{{ __('Automatización mediante cron jobs para actualizar estados y enviar notificaciones.') }}</li> 
                     </ul>
                 </div>
             </div>
