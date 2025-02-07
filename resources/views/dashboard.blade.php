@@ -121,7 +121,6 @@
                 const passwordInput = document.querySelector('input#passwordInput');
                 passwordInput.value = password;
     
-                // Crear el botón de copiar si no existe
                 let copyButton = document.querySelector('button#copyPasswordBtn');
                 if (!copyButton) {
                     copyButton = document.createElement('button');
@@ -129,15 +128,12 @@
                     copyButton.textContent = 'Copiar';
                     copyButton.className = 'px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#17630e] border border-transparent rounded-md hover:bg-[#17630e] focus:outline-none focus:ring-2 focus:ring-[#17630e] focus:ring-offset-2';
     
-                    // Insertar el botón después del input
                     passwordInput.parentNode.appendChild(copyButton);
                 }
     
-                // Limpiar eventos previos antes de agregar el evento de copiar
                 copyButton.replaceWith(copyButton.cloneNode(true));
                 copyButton = document.querySelector('button#copyPasswordBtn');
     
-                // Agregar evento para copiar la contraseña al portapapeles
                 copyButton.addEventListener('click', function () {
                     navigator.clipboard.writeText(passwordInput.value).then(() => {
                         alert('¡Contraseña copiada al portapapeles!');
