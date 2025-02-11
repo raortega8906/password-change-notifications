@@ -97,6 +97,13 @@
             </div>
         </div>
     </div>
+    <footer class="mt-20 py-6 bg-white shadow-md">
+        <div class="container mx-auto px-6 flex justify-center items-center">
+            <p class="text-sm text-[#17630e]">&copy; {{ date('Y') }} {{ __('Desarrollado por') }}
+                <a class="hover:underline" href="https://portfolio.wpcache.es" target="blank">{{ __('Rafael A. Ortega') }}</a>.
+            </p>
+        </div>
+    </footer>
     <script>
         alert('Para probar el sistema, por favor, inicia sesión con el usuario "admin@admin.com" y la contraseña "admin".');
 
