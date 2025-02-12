@@ -95,7 +95,12 @@
                 </table>
             </div>
             <div class="px-4 py-3 text-xs font-semibold tracking-wide text-[#17630e] bg-[#FFFFFF] border-t">
-                {{ __('Mostrando los proyectos sin la contraseña cambiada') }}
+                @if ($projectsWithoutChange->count() == 0)
+                    {{ __('Muchas gracias, todos los proyectos tienen la contraseña actualizada') }}
+                @else
+                    {{ __('Mostrando los proyectos sin la contraseña cambiada') }}
+                @endif
+                
                 @php
                     // $projectsSinCambiar->count();
                 @endphp
