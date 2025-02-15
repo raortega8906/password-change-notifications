@@ -69,6 +69,13 @@ class ProjectController extends Controller
         return redirect()->route('admin.projects.index', compact('project'));
     }
 
+    public function destroyProjectUser(Project $project)
+    {
+        $project->delete();
+
+        return redirect()->route('projects.index', compact('project'));
+    }
+
     /**
      * Add resources to the dashboard
      */

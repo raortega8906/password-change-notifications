@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Rutas Usuarios para el Usuario no Admin
+    // Rutas Usuarios
     Route::get('/users/edit', [UserController::class, 'editNoAdmin'])->name('users.edit');
     Route::put('/users/update/{user}', [UserController::class, 'updateNoAdmin'])->name('users.update');
 
@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
     Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
     Route::put('/projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');
+    Route::delete('/projects/delete/{project}', [ProjectController::class, 'destroyProjectUser'])->name('projects.delete');
 
 });
 

@@ -18,6 +18,7 @@
                         <th class="px-4 py-3">{{ __('Proyecto') }}</th>
                         <th class="px-4 py-3">{{ __('Estado') }}</th>
                         <th class="px-4 py-3">{{ __('Fecha de actualización') }}</th>
+                        <th class="px-4 py-3">{{ __('Estado contraseña') }}</th>
                         <th class="px-4 py-3">{{ __('Acciones') }}</th>
                     </tr>
                 </thead>
@@ -54,6 +55,18 @@
                                     {{ __('Actualizada') }}
                                 </button>
                             @endif
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            <div class="flex items-center space-x-4">
+                                <form action="{{ route('projects.delete', $project) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" 
+                                            class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring">
+                                        {{ __('Eliminar') }}
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     @endforeach
