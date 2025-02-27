@@ -57,26 +57,33 @@ class DatabaseSeeder extends Seeder
 
         // Creamos los proyectos, asignando un usuario aleatorio a cada uno
         $proyectos = [
-            'Código Media',
-            'Tena España - Centrada en ti',
-            'Tena Italia - Dedicato a me',
-            'Landing - Ultima menopausa da sola',
-            'Tena Grecia - Syn seola',
-            'Tena Portugal - Centrada em si',
-            'Ford - The SUV Master',
-            'Ford - Club Privilegio',
-            'Ford - Sales Pro Talent',
-            'Ibermedia - Programa Ibermedia',
-            'Ibermedia - Ibermedia Digital',
-            'Fitecbot',
-            'Eurologística',
-            'Vintage Ibiza',
-            'Fundación Real Madrid',
-            'Amaya Sangil',
-            'Jesús nos cuenta',
-            'Revista Me & My Mazda',
-            'Virtual Vendor Video',
-            'Lambda 3'
+            // Tecnología y Negocios  
+            'CodeSphere',
+            'InnovaTech',
+            'Nexus Digital',
+            'Visionary Hub',
+            'Smart Flow',
+        
+            // Automoción y Transporte  
+            'DriveXperience',
+            'Speed Master',
+            'AutoPulse',
+            'EVolution Drive',
+            'Road Legend',
+        
+            // Salud y Bienestar  
+            'Vital Essence',
+            'Serena Vida',
+            'Cuidado Total',
+            'Equilibrio Mujer',
+            'Harmonia Vital',
+        
+            // Cultura y Medios  
+            'ArsNova Media',
+            'Latam Visión',
+            'Nexo Cultural',
+            'Contenido Vivo',
+            'Horizon Creative'
         ];
 
         foreach ($proyectos as $proyecto) {
