@@ -18,8 +18,6 @@ class UserController extends Controller
         $users = User::all();
         // $projects = Project::all()->where('user_id', auth()->id())->count();
 
-        // dd($projects);
-
         return view('admin.users.index', compact('users'));
     }
 
